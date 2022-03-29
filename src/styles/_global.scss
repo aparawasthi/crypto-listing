@@ -1,0 +1,142 @@
+//  CSS Reset
+
+//  Box sizing
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+//  Reset margins
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-weight: 400;
+}
+
+body {
+  font-family: $ff-serif;
+  font-size: $fs-400;
+  color: hslModel($clr-black, 0.6);
+  background-color: hslModel($clr-white, 0.1);
+  line-height: 1.5;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+// make images easier to work with
+img,
+picutre {
+  max-width: 100%;
+  display: block;
+}
+
+// make form elements easier to work with
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+}
+
+// remove animations for people who've turned them off
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  a *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $scrollbar-thumb-bg !important;
+  border-radius: 100px !important;
+}
+
+::-webkit-scrollbar-track {
+  background: $scrollbar-track-bg !important;
+  border-radius: 100px !important;
+}
+
+.container {
+  padding-inline: 2em;
+  margin-inline: auto;
+  max-width: 70rem;
+}
+
+.flex {
+  display: flex;
+  gap: 1rem;
+}
+
+.flex-align-center {
+  align-items: center;
+}
+
+.flex-justify-space-between {
+  justify-content: space-between;
+}
+
+.fs-900 {
+  font-size: $fs-900;
+}
+.fs-800 {
+  font-size: $fs-800;
+}
+.fs-700 {
+  font-size: $fs-700;
+}
+.fs-600 {
+  font-size: $fs-600;
+}
+.fs-500 {
+  font-size: $fs-500;
+}
+.fs-400 {
+  font-size: $fs-400;
+}
+.fs-300 {
+  font-size: $fs-300;
+}
+.fs-200 {
+  font-size: $fs-200;
+}
+
+.fs-900,
+.fs-800,
+.fs-700,
+.fs-600 {
+  line-height: 1.1;
+}
+
+.fw-bold {
+  font-weight: bold;
+}

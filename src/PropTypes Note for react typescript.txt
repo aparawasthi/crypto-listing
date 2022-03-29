@@ -1,0 +1,35 @@
+import React, { useState } from 'react';
+
+type PropsTypes = {
+    name: string; //String Type
+    mesaageCount: number; // Number Type
+    isLoggedIn: boolean; //Boolean Type
+    names1: {}[]; //Array of object type
+    names2: {
+        first: string;
+        last: string;
+    }[]; //Array of object type with defined structure
+    status: 'loading' | 'success' | 'error'; // Only one of these value will be allowed
+    children: React.ReactNode;
+    optional?: 'string'; // An optional prop
+    handleClick1: () => void; // An event handler type that does not take any value and doesn't return anything
+    handleClick2: (event: React.MouseEvent, id: number) => void; //Event type
+    handleClick3: (event: React.MouseEvent<HTMLButtonElement>, id: number) => void; // More specific event type
+    handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void; // event handler type for input element on change handler
+    styles: React.CSSProperties; // Prop type for style
+};
+
+type AuthUser = {
+    name: string;
+    email: string;
+};
+
+function Test() {
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [user, setUser] = useState<AuthUser | null>(null); // Telling typescript that the user can be either null or AuthUser type
+    const [userb, setUserb] = useState<AuthUser>({} as AuthUser); //Type Assertion telling typescript that user can never br null value
+
+    return <div>Test</div>;
+}
+
+export default Test;
